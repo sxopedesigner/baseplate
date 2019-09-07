@@ -1,0 +1,34 @@
+{
+  "name": "baseplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-shorthand": "^1.1.0",
+    "gulp-webp": "^4.0.1",
+    "gulp-zip": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhadresharya/baseplate.git"
+  },
+  "author": "Bhadresh Arya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bhadresharya/baseplate/issues"
+  },
+  "homepage": "https://github.com/bhadresharya/baseplate#readme"
+}
