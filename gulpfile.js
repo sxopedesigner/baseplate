@@ -55,20 +55,29 @@ gulp.task('app-zip', function () {
         .pipe(zip('app.zip'))
         .pipe(gulp.dest('./'));
 });
-// Run gulp public-zip
+// Run gulp zip
 gulp.task('public-zip', function () {
     return gulp.src(src.public)
         .pipe(zip('public.zip'))
         .pipe(gulp.dest('./'));
 });
-// Run gulp project-zip
 gulp.task('project-zip', function () {
     return gulp.src([src.app, src.public,'./*.js','./*.json'])
         .pipe(zip('project.zip'))
         .pipe(gulp.dest('./'));
 });
-// Run gulp zip
 gulp.task('zip', gulp.series(['app-zip', 'public-zip', 'project-zip']));
+
+// Run gulp copy
+gulp.task('copy-Bootstrap-CSS', function () {
+    return gulp.src('node_modules/bootstrap/scss/*.scss')
+        .pipe(gulp.dest('./app/scss/bootstrap'));
+});
+gulp.task('copy-Bootstrap-JS', function () {
+    return gulp.src('node_modules/bootstrap/dist/js/bootstrap.min.js')
+        .pipe(gulp.dest('./app/js/'));
+})
+gulp.task('copy', gulp.series(['copy-Bootstrap-CSS', 'copy-Bootstrap-JS']));
 
 // Run gulp
 gulp.task('default', gulp.parallel('serve'));
