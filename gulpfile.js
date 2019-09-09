@@ -8,6 +8,7 @@ var cleancss        = require('gulp-clean-css');
 var mediaQ          = require('gulp-group-css-media-queries');
 var webp            = require('gulp-webp');
 var zip             = require('gulp-zip');
+var rename          = require('gulp-rename');
 var browserSync     = require('browser-sync').create();
 
 var src = {
@@ -38,7 +39,11 @@ gulp.task('style', function () {
         .pipe(shorthand())
         .pipe(mediaQ())
         .pipe(cleancss())
+        .pipe(rename({
+            suffix: ".min"
+        }))
         .pipe(gulp.dest('app/css'))
+
         .pipe(browserSync.stream());
 });
 
