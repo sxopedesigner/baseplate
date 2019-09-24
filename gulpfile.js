@@ -75,7 +75,7 @@ gulp.task('zip', gulp.series(['app-zip', 'public-zip', 'project-zip']));
 
 // Run gulp copy
 gulp.task('copy-Bootstrap-CSS', function () {
-    return gulp.src('node_modules/bootstrap/scss/*.scss')
+    return gulp.src('node_modules/bootstrap/scss/**/*.scss')
         .pipe(gulp.dest('./app/scss/bootstrap'));
 });
 gulp.task('copy-Bootstrap-JS', function () {
