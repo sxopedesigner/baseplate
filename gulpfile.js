@@ -82,7 +82,15 @@ gulp.task('copy-Bootstrap-JS', function () {
     return gulp.src('node_modules/bootstrap/dist/js/bootstrap.min.js')
         .pipe(gulp.dest('./app/js/'));
 })
-gulp.task('copy', gulp.series(['copy-Bootstrap-CSS', 'copy-Bootstrap-JS']));
+gulp.task('copy-jquery', function () {
+    return gulp.src('node_modules/jquery/dist/jquery.js')
+        .pipe(gulp.dest('./app/js'));
+})
+gulp.task('copy-popper-JS', function () {
+    return gulp.src('node_modules/popper.js/dist/popper.js')
+        .pipe(gulp.dest('./app/js'));
+})
+gulp.task('copy', gulp.series(['copy-Bootstrap-CSS', 'copy-Bootstrap-JS','copy-jquery','copy-popper-JS']));
 
 // Run gulp
 gulp.task('default', gulp.parallel('serve'));
